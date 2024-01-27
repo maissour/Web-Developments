@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Category{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="my-3">
+        <h1 align="center">{{ category.name }}</h1>
+    </div>
+    <div class="row">
+        {% for image in images %}
+        <div class="col-lg-3">
+            <div class="card border-2 border-black">
+                <div class="ratio ratio-16x9">
+                    <img src="{{ image.image.url }}" class="card-img-top" alt="" 
+                    data-bs-toggle="modal" data-bs-target="#modal_{{ image.id }}" type="button">
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="modal_{{ image.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="modalLabel_{{ image.id }}" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="modalLabel_{{ image.id }}">{{ image.title }}</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="card">
+                                    <img src="{{ image.image.url }}" class="card-img-top" alt="">
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5>{{ image.title }}</h5>
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

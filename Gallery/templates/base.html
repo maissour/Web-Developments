@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="icon" href="{% static 'img/gicon.ico' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body class="pb-5">
+    {% block content %}{% endblock %}
+
+
+    <footer>
+        <nav class="navbar navbar-expand-lg fixed-bottom bg-black">
+            <div class="container">
+                <a class="navbar-brand text-white" href="/">
+                    <img src="{% static 'img/gicon.png' %}" alt="" width="30px" height="30px">
+                    Gallery
+                </a>
+                <h5 class="text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom"
+                    aria-controls="offcanvasBottom">About</h5>
+            </div>
+        </nav>
+    
+        <div class="offcanvas offcanvas-bottom text-bg-dark" tabindex="-1" id="offcanvasBottom"
+            aria-labelledby="offcanvasDarkLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasDarkLabel">Offcanvas bottom</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card p-2 bg-dark text-white">
+                                <p align="justify">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting 
+                                    industry. Lorem Ipsum has been the industry's standard dummy text 
+                                    ever since the 1500s, when an unknown printer took a galley of type 
+                                    and scrambled it to make a type specimen book. It has survived not 
+                                    only five centuries, but also the leap into electronic typesetting, 
+                                    remaining essentially unchanged. It was popularised in the 1960s with 
+                                    the release of Letraset sheets containing Lorem Ipsum passages, and 
+                                    more recently with desktop publishing software like Aldus PageMaker 
+                                    including versions of Lorem Ipsum.
+                                </p>
+                                <p>Copyright &copy; 2024 <a href="/" target="_blank">Gallery</a>. All right reserved</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card p-2 bg-dark text-white">
+                                <form action="">
+                                    <div class="row d-flex justify-content-around mb-3">
+                                        <div class="col-lg-5">
+                                            <label for="fullname" class="form-label">Full name</label>
+                                            <input type="email" class="form-control" id="fullname" 
+                                            placeholder="fullname..">
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <label for="email" class="form-label">Email address</label>
+                                            <input type="email" class="form-control" id="email" 
+                                            placeholder="name@example.com">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="textarea" class="form-label">Message</label>
+                                        <textarea class="form-control" id="textarea" rows="3"></textarea>
+                                    </div>
+                                    <div class="mb-3 d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-lg btn-primary mb-3">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/all.min.js' %}"></script>
+</body>
+</html>

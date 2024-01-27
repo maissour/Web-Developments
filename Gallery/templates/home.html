@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<div class="container-fluid my-3">
+    <div class="row my-3">
+        {% for item in categories_with_last_images %}
+        <div class="col-lg-4 mb-3">
+            <div class="card">
+                <div class="image-wrapper ratio ratio-16x9">
+                    <a href="{% url 'category_detail' item.category.id %}">
+                        <img src="{{ item.last_image.image.url }}" class="card-img-top scale-on-hover" alt="">
+                    </a>
+                </div>
+                <div class="card-body">
+                    <a href="{% url 'category_detail' item.category.id %}">
+                        <h1>{{ item.category.name }}</h1>
+                    </a>
+                    you have {{ item.category.image_count }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

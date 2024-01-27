@@ -1,0 +1,29 @@
+a{
+    text-decoration: none;
+}
+
+.offcanvas.offcanvas-bottom {
+    height:75% !important;
+}
+
+
+.card {
+    overflow: hidden; /* Ensure that the card container clips the image overflow */
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.scale-on-hover {
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center;
+}
+
+.image-wrapper:hover .scale-on-hover {
+    transform: scale(1.2);
+}
+
+
+
